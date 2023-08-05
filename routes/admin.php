@@ -24,5 +24,6 @@ Route::resource('tags', TagController::class)->except('show')->names('admin.tags
 Route::resource('posts', PostController::class)->except('show')->names('admin.posts');
 
 Route::post('image-upload', [ImageUploadController::class, 'storeImage'])->name('image.upload');
+Route::post('delete-image', [ImageUploadController::class, 'deleteImage'])->name('image.delete');
 
 

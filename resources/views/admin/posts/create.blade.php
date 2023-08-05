@@ -54,15 +54,15 @@
                     console.error(error);
                 });
 
-                ClassicEditor
-            .create(document.querySelector('#body'), {
-                ckfinder: {
-                    uploadUrl: '{{ route('image.upload') . '?_token=' . csrf_token() }}',
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            ClassicEditor
+                .create(document.querySelector('#body'), {
+                    ckfinder: {
+                        uploadUrl: '{{ route('image.upload') . '?_token=' . csrf_token() }}',
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
 
             $('#file').change(function(e) {
                 let file = e.target.files[0];
@@ -73,6 +73,7 @@
                 reader.readAsDataURL(file);
             });
         });
+
     </script>
 @endsection
 
